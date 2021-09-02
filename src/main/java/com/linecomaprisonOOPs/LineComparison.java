@@ -11,13 +11,8 @@ public class LineComparison {
     public static void main(String[] args) {
         LineComparison lineMethod = new LineComparison();//created object to call method welcomemessage as it is not static
         lineMethod.welcomemessage();
-        double line1Length = lineMethod.lengthOfLine1();
-        double line2Length = lineMethod.lengthOfLine2();
-        if (line1Length == line2Length) {
-            System.out.println("Lines are Equal");
-        } else {
-            System.out.println("Lines are not equal");
-        }
+        lineMethod.compareLines();
+
     }
 
     private void welcomemessage() {
@@ -54,6 +49,18 @@ public class LineComparison {
         line2 = Math.sqrt(Math.pow((x4 - x3), 2)) + Math.pow((y4 - y3), 2);
         System.out.println("Length of the line: " + line1);
         return line2;
+    }
+
+    public void compareLines() {
+        double line1Length = lengthOfLine1();
+        double line2Length = lengthOfLine2();
+        if (line1Length == line2Length) {
+            System.out.println("Lines are Equal");
+        } else if (line1Length > line2Length) {
+            System.out.println("Line1 is greater than Line2 ");
+        } else{
+            System.out.println("lines2 is greater than line1");
+        }
     }
 
 }
